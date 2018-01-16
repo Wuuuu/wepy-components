@@ -18,7 +18,8 @@ import 'wepy-async-function'
 export default class extends wepy.app {
   config = {
     pages: [
-      'pages/index'
+      'pages/index',
+      'pages/about'
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -36,7 +37,7 @@ export default class extends wepy.app {
         selectedIconPath: 'assets/icon/icon-basketball.png',
         text: 'Demo'
       }, {
-        pagePath: 'pages/index',
+        pagePath: 'pages/about',
         iconPath: 'assets/icon/icon-volleyball.png',
         selectedIconPath: 'assets/icon/icon-american-football.png',
         text: 'About'

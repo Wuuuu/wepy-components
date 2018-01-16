@@ -1,0 +1,30 @@
+<style lang="less">
+
+</style>
+<template>
+  <view class="about-container">
+    "this is about me page"
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class About extends wepy.page {
+    config = {
+      navigationBarTitleText: 'About'
+    }
+    components = {
+    }
+
+    data = {
+    }
+
+
+    methods = {
+    }
+
+    onLoad() {
+    }
+  }
+</script>
