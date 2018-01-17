@@ -1,142 +1,29 @@
 
-  <view class="container">
-    <view class="userinfo" bindtap="handleViewTap">
-      <image class="userinfo-avatar" src="{{ userInfo.avatarUrl }}" background-size="cover"/>
-      <view class="userinfo-nickname">{{ userInfo.nickName }}</view>
+  <view class="page">
+    <view class="page__hd">
+      <view class="page__title">Wepy-组件</view>
+      <view class="page__desc">🏀 这是一个使用wepy完成的基础组件</view>
     </view>
-
-    
-  <view class="panel">
-    <view class="title">测试数据绑定</view>
-    
-      
-
-      <text class="info">{{normalTitle}}</text>
-      <text class="info">{{setTimeoutTitle}}</text>
-      <text class="info">{{mixin}}</text>
-      <text class="info">{{mynum}}</text>
-      <text class="info">{{now}}</text>
-      <button bindtap="plus" size="mini" data-wpyplus-a="a">  +  </button>
-    
-  </view>
-
-
-    
-  <view class="panel">
-    <view class="title">其它测试</view>
-    
-      
-      <button bindtap="toast" size="mini">第三方组件</button>
-      <button bindtap="communicate" size="mini">组件通信</button>
-      <button bindtap="tap" size="mini">混合TAP事件</button>
-    
-  </view>
-
-
-    
-  <view class="panel">
-    <view class="title">测试并发网络请求</view>
-    
-      
-      <view>返回结果: <text>{{netrst}}</text></view>
-      <button bindtap="request" size="mini"> 点我发起10个请求 </button>
-    
-  </view>
-
-
-    
-  <view class="panel">
-    <view class="title">测试组件</view>
-    
-      
-
-      <text class="testcounter">计数组件1: </text>
-      <view class="counterview">
-        
-  <view class="counter {{$counter1$style}}">
-    <button bindtap="$counter1$plus" size="mini">  +  </button>
-    <button bindtap="$counter1$minus" size="mini">  -  </button>
-    <text class="count {{$counter1$num > 55 ? 'red' : ''}} {{$counter1$num < 45 ? 'green' : ''}}" > {{$counter1$num}} </text>
-  </view>
-
+    <view class="page__bd page__bd_spacing">
+      <view class="kind-list">
+        <block  wx:for="{{list}}" wx:key="id">
+          <view class="kind-list__item">
+            <view id="{{item.id}}" class="weui-flex kind-list__item-hd {{item.open ? 'kind-list__item-hd_show' : ''}}" bindtap="kindToggle">
+              <view class="weui-flex__item">{{item.name}}</view>
+              <image class="kind-list__img" src="images/icon_nav_{{item.id}}.png"/>
+            </view>
+            <view class="kind-list__item-bd {{item.open ? 'kind-list__item-bd_show' : ''}}">
+              <view class="weui-cells {{item.open ? 'weui-cells_show' : ''}}">
+                <block wx:for="{{item.pages}}" wx:for-item="page" wx:key="*this">
+                  <navigator url="{{page}}/{{page}}" class="weui-cell weui-cell_access">
+                    <view class="weui-cell__bd">{{page}}</view>
+                    <view class="weui-cell__ft weui-cell__ft_in-access"/>
+                  </navigator>
+                </block>
+              </view>
+            </view>
+          </view>
+        </block>
       </view>
-
-      <text class="testcounter">计数组件2: </text>
-
-      <view class="counterview">
-        
-  <view class="counter {{$counter2$style}}">
-    <button bindtap="$counter2$plus" size="mini">  +  </button>
-    <button bindtap="$counter2$minus" size="mini">  -  </button>
-    <text class="count {{$counter2$num > 55 ? 'red' : ''}} {{$counter2$num < 45 ? 'green' : ''}}" > {{$counter2$num}} </text>
-  </view>
-
-      </view>
-    
-  </view>
-
-
-    
-  <view class="panel">
-    <view class="title">测试组件Repeat</view>
-    
-      
-      <block wx:for="{{groupList}}" wx:for-index="index" wx:for-item="item" wx:key="key">
-        
-  <view class="group">
-    <text class="id">{{item.id}}. </text>
-    <text class="name" bindtap="$group$tap" data-com-index="{{index}}">{{item.name}}</text>
-    <view>
-      <block wx:for="{{item.list}}" wx:for-index="$group$index" wx:for-item="$group$item" wx:key="$group$key">
-        
-  <view class="groupitem">
-    --<text class="id">{{$group$item.childid}}.</text>
-    <text class="name" bindtap="$group$groupitem$tap" data-com-index="{{index}}-{{$group$index}}"> {{$group$item.childname}}</text>
-  </view>
-
-      </block>
     </view>
-  </view>
-
-      </block>
-    
-  </view>
-
-
-    
-  <view class="panel">
-    <view class="title">测试列表</view>
-    
-      
-      
-  <view class="list">
-  <view>
-    <button bindtap="$list$add" size="mini">添加列表</button>
-  </view>
-    <block  wx:for-items="{{$list$list}}" wx:for-index="index" wx:for-item="item" wx:key="id">
-      <view bindtap="$list$tap" class="mylist">
-        <text>{{item.id}}</text>: {{item.title}}
-      </view>
-    </block>
-  </view>
-
-    
-  </view>
-
-
-    
-    <view class="wetoast {{$toast$reveal ? 'wetoast_show' : ''}}">
-        <view class="wetoast__mask"/>
-        <view class="wetoast__bd" animation="{{$toast$animationData}}">
-            <block  wx:if="{{$toast$img}}">
-                <view class="wetoast__bd__img {{$toast$imgClassName || ''}}">
-                    <image class="wetoast__bd__img_desc" src="{{$toast$img}}" mode="{{$toast$imgMode || 'scaleToFill'}}"/>
-                </view>
-            </block>
-            <block  wx:if="{{$toast$title}}">
-                <view class="wetoast__bd__title {{$toast$titleClassName || ''}}">{{$toast$title}}</view>
-            </block>
-        </view>
-    </view>
-
   </view>
