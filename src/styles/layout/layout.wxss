@@ -12,6 +12,7 @@
 .index-logo {
   width: 100rpx;
   height: 100rpx;
+  border-radius: 50%;
 }
 .index-desc {
   margin-top: 20rpx;
