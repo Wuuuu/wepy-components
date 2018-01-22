@@ -1,0 +1,39 @@
+<style lang="less">
+
+</style>
+<template>
+  <view class="page-swiper__container">
+    <comContainer title="swiper" desc="轮播图">
+      <comCard title="swiper" desc="普通的轮播图">
+        <swiper />
+      </comCard>
+    </comContainer>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import comCard from '../../../components/componentCard'
+  import comContainer from '../../../components/componentContainer'
+  import swiper from '../../../components/swiper'
+
+  export default class Swiper extends wepy.page {
+    config = {
+      navigationBarTitleText: '轮播图'
+    }
+    components = {
+      comContainer,
+      comCard,
+      swiper
+    }
+
+    data = {
+    }
+
+    methods = {
+    }
+
+    onLoad() {
+    }
+  }
+</script>

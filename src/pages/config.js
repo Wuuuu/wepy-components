@@ -5,8 +5,8 @@ module.exports = {
     open: false,
     icon: 'https://s10.mogucdn.com/mlcdn/c45406/171024_50f5h033e7eeclkiie147jc94hfae_68x68.png',
     pages: [{
-      "id": "color",
-      "name": "颜色",
+      "id": "swiper",
+      "name": "",
       "icon": "",
       "code": "https://s10.mogucdn.com/mlcdn/c45406/171107_11bia820k8j1djja0kl0ce8ejce5g_480x480.jpg"
     }, {

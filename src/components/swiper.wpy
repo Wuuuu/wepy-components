@@ -1,0 +1,64 @@
+<style lang="less">
+.com-swiper__container {
+	.kk-swiper {
+		height: 460rpx;
+		.kk-swiper__image {
+			display: block;
+			width: 100%;
+		}
+	}
+}
+</style>
+<template>
+  <view class="com-swiper__container">
+    <swiper
+			class="kk-swiper" 
+			indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}" 
+			interval="{{interval}}" 
+			duration="{{duration}}"
+			current="{{current}}"
+			@change="changeSwiper"
+		>
+			<repeat for="{{imgUrls}}" key="key" index="index" item="item">
+        <swiper-item>
+          <image src="{{item}}" class="kk-swiper__image" mode="widthFix"/>
+        </swiper-item>
+      </repeat>
+    </swiper>
+  </view>
+</template>
+<script>
+  import wepy from 'wepy'
+
+  export default class Swiper extends wepy.component {
+    props = {
+      num: {
+        type: [Number, String],
+        coerce: function (v) {
+          return +v
+        },
+        default: 50
+      }
+    }
+    data = {
+      imgUrls: [
+				'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+        'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
+        'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
+			],
+      indicatorDots: true,
+      autoplay: false,
+      interval: 5000,
+			duration: 1000,
+			current: 0
+    }
+    methods = {
+      changeSwiper(e) {
+        let self = this
+        self.swiperCurrentPage = e.detail.current
+        self.$apply()
+      }
+    }
+  }
+</script>

@@ -43,8 +43,9 @@ import 'wepy-async-function'
 export default class extends wepy.app {
   config = {
     pages: [
+      'pages/components/swiper/index',
       'pages/index',
-      'pages/about'
+      'pages/about',
     ],
     window: {
       backgroundTextStyle: 'light',

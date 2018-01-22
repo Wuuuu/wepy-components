@@ -1,0 +1,3 @@
+@import "./../../../components/swiper.wxss";
+@import "./../../../components/componentCard.wxss";
+@import "./../../../components/componentContainer.wxss";
