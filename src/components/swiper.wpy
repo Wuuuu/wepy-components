@@ -41,7 +41,7 @@
     }
     data = {
       indicatorDots: true,  // 是否显示面板指示点
-      autoplay: false,      // 是否自动播放
+      autoplay: true,      // 是否自动播放
       interval: 5000,       // 自动切换时间间隔
 			duration: 1000,       // 滑动动画时长
 			current: 0,           // 当前所在滑块的 index

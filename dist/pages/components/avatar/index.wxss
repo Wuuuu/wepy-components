@@ -1,0 +1,2 @@
+@import "./../../../components/componentCard.wxss";
+@import "./../../../components/componentContainer.wxss";

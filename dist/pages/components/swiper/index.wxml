@@ -40,19 +40,6 @@
     </view>
   </view>
 
-    
-    </view>
-  </view>
-
-    
-  <view class="com-container__container">
-    <view class="example example--wrap">
-      <view  wx:if="{{$comContainer$title || $comContainer$desc}}" class="example__head">
-          <view wx:if="{{$comContainer$title}}" class="example__head--title">{{$comContainer$title}}</view>
-          <view wx:if="{{$comContainer$title && $comContainer$desc}}" class="example__head--line"/>
-          <view wx:if="{{$comContainer$desc}}" class="example__head--desc">{{$comContainer$desc}}</view>
-      </view>
-      
       
   <view class="com-card__container">
     <view class="example--box">

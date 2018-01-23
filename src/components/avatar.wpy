@@ -1,0 +1,20 @@
+<style lang="less">
+
+}
+</style>
+<template>
+  <view class="com-avatar__container">
+    <view>123</view>
+  </view>
+</template>
+<script>
+  import wepy from 'wepy'
+
+  export default class Avatar extends wepy.component {
+    props = {}
+    data = {}
+    methods = {}
+    onLoad (e) {
+    }
+  }
+</script>

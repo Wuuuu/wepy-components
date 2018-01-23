@@ -7,8 +7,6 @@
       <comCard title="swiper" desc="普通的轮播图">
         <swiper :imgs.sync="imgs" ></swiper>
       </comCard>
-    </comContainer>
-    <comContainer title="swiperVertical" desc="轮播图">
       <comCard title="swiperVertical" desc="纵向通知滚动展示类轮播">
         <swiperVertical :imgs.sync="verticalImgs" ></swiperVertical>
       </comCard>

@@ -1,0 +1,33 @@
+<style lang="less">
+
+</style>
+<template>
+  <view class="page-avatar__container">
+    <view>123</view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import comCard from '../../../components/componentCard'
+  import comContainer from '../../../components/componentContainer'
+
+  export default class Avatar extends wepy.page {
+    config = {
+      navigationBarTitleText: 'Layout'
+    }
+    components = {
+      comContainer,
+      comCard,
+    }
+
+    data = {
+    }
+
+    methods = {
+    }
+
+    onLoad() {
+    }
+  }
+</script>

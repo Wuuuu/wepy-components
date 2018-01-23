@@ -9,7 +9,7 @@
 <view>
   <view class="index">
     <view class="index-hd">
-      <image class="index-logo" src="../assets/icon/logo.jpg"></image>
+      <image class="index-logo" src="../assets/icon/logo.png"></image>
       <view class="index-desc">基于规范的小程序组件库，简洁、易用、工具化</view>
     </view>
     <view class="index-bd">
