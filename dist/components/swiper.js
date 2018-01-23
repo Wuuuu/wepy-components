@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _wepy = require('./../npm/wepy/lib/wepy.js');
 
 var _wepy2 = _interopRequireDefault(_wepy);
@@ -31,14 +33,18 @@ var Swiper = function (_wepy$component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Swiper.__proto__ || Object.getPrototypeOf(Swiper)).call.apply(_ref, [this].concat(args))), _this), _this.props = {}, _this.data = {
-      imgUrls: ['http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg', 'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg', 'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'],
-      indicatorDots: true,
-      autoplay: false,
-      interval: 5000,
-      duration: 1000,
-      current: 0,
-      iscircular: true
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Swiper.__proto__ || Object.getPrototypeOf(Swiper)).call.apply(_ref, [this].concat(args))), _this), _this.props = {
+      imgs: {
+        type: Array,
+        default: []
+      }
+    }, _this.data = {
+      indicatorDots: true, // 是否显示面板指示点
+      autoplay: false, // 是否自动播放
+      interval: 5000, // 自动切换时间间隔
+      duration: 1000, // 滑动动画时长
+      current: 0, // 当前所在滑块的 index
+      iscircular: true // 是否采用衔接滑动
     }, _this.methods = {
       handleChange: function handleChange(e) {
         var self = this;
@@ -48,8 +54,13 @@ var Swiper = function (_wepy$component) {
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
+  _createClass(Swiper, [{
+    key: 'onLoad',
+    value: function onLoad(e) {}
+  }]);
+
   return Swiper;
 }(_wepy2.default.component);
 
 exports.default = Swiper;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN3aXBlci5qcyJdLCJuYW1lcyI6WyJTd2lwZXIiLCJwcm9wcyIsImRhdGEiLCJpbWdVcmxzIiwiaW5kaWNhdG9yRG90cyIsImF1dG9wbGF5IiwiaW50ZXJ2YWwiLCJkdXJhdGlvbiIsImN1cnJlbnQiLCJpc2NpcmN1bGFyIiwibWV0aG9kcyIsImhhbmRsZUNoYW5nZSIsImUiLCJzZWxmIiwic3dpcGVyQ3VycmVudFBhZ2UiLCJkZXRhaWwiLCIkYXBwbHkiLCJjb21wb25lbnQiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7QUFDRTs7Ozs7Ozs7Ozs7O0lBRXFCQSxNOzs7Ozs7Ozs7Ozs7OztzTEFDbkJDLEssR0FBUSxFLFFBRVJDLEksR0FBTztBQUNMQyxlQUFTLENBQ1gsc0VBRFcsRUFFUCxzRUFGTyxFQUdQLHNFQUhPLENBREo7QUFNTEMscUJBQWUsSUFOVjtBQU9MQyxnQkFBVSxLQVBMO0FBUUxDLGdCQUFVLElBUkw7QUFTUkMsZ0JBQVUsSUFURjtBQVVSQyxlQUFTLENBVkQ7QUFXUkMsa0JBQVk7QUFYSixLLFFBYVBDLE8sR0FBVTtBQUNSQyxrQkFEUSx3QkFDS0MsQ0FETCxFQUNRO0FBQ2QsWUFBSUMsT0FBTyxJQUFYO0FBQ0FBLGFBQUtDLGlCQUFMLEdBQXlCRixFQUFFRyxNQUFGLENBQVNQLE9BQWxDO0FBQ0FLLGFBQUtHLE1BQUw7QUFDRDtBQUxPLEs7Ozs7RUFoQndCLGVBQUtDLFM7O2tCQUFwQmpCLE0iLCJmaWxlIjoic3dpcGVyLmpzIiwic291cmNlc0NvbnRlbnQiOlsiXHJcbiAgaW1wb3J0IHdlcHkgZnJvbSAnd2VweSdcclxuXHJcbiAgZXhwb3J0IGRlZmF1bHQgY2xhc3MgU3dpcGVyIGV4dGVuZHMgd2VweS5jb21wb25lbnQge1xyXG4gICAgcHJvcHMgPSB7XHJcbiAgICB9XHJcbiAgICBkYXRhID0ge1xyXG4gICAgICBpbWdVcmxzOiBbXHJcblx0XHRcdFx0J2h0dHA6Ly9pbWcwMi50b29vcGVuLmNvbS9pbWFnZXMvMjAxNTA5MjgvdG9vb3Blbl9zeV8xNDM5MTI3NTU3MjYuanBnJyxcclxuICAgICAgICAnaHR0cDovL2ltZzA2LnRvb29wZW4uY29tL2ltYWdlcy8yMDE2MDgxOC90b29vcGVuX3N5XzE3NTg2NjQzNDI5Ni5qcGcnLFxyXG4gICAgICAgICdodHRwOi8vaW1nMDYudG9vb3Blbi5jb20vaW1hZ2VzLzIwMTYwODE4L3Rvb29wZW5fc3lfMTc1ODMzMDQ3NzE1LmpwZydcclxuXHRcdFx0XSxcclxuICAgICAgaW5kaWNhdG9yRG90czogdHJ1ZSxcclxuICAgICAgYXV0b3BsYXk6IGZhbHNlLFxyXG4gICAgICBpbnRlcnZhbDogNTAwMCxcclxuXHRcdFx0ZHVyYXRpb246IDEwMDAsXHJcblx0XHRcdGN1cnJlbnQ6IDAsXHJcblx0XHRcdGlzY2lyY3VsYXI6IHRydWVcclxuICAgIH1cclxuICAgIG1ldGhvZHMgPSB7XHJcbiAgICAgIGhhbmRsZUNoYW5nZShlKSB7XHJcbiAgICAgICAgbGV0IHNlbGYgPSB0aGlzXHJcbiAgICAgICAgc2VsZi5zd2lwZXJDdXJyZW50UGFnZSA9IGUuZGV0YWlsLmN1cnJlbnRcclxuICAgICAgICBzZWxmLiRhcHBseSgpXHJcbiAgICAgIH1cclxuICAgIH1cclxuICB9XHJcbiJdfQ==
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN3aXBlci5qcyJdLCJuYW1lcyI6WyJTd2lwZXIiLCJwcm9wcyIsImltZ3MiLCJ0eXBlIiwiQXJyYXkiLCJkZWZhdWx0IiwiZGF0YSIsImluZGljYXRvckRvdHMiLCJhdXRvcGxheSIsImludGVydmFsIiwiZHVyYXRpb24iLCJjdXJyZW50IiwiaXNjaXJjdWxhciIsIm1ldGhvZHMiLCJoYW5kbGVDaGFuZ2UiLCJlIiwic2VsZiIsInN3aXBlckN1cnJlbnRQYWdlIiwiZGV0YWlsIiwiJGFwcGx5IiwiY29tcG9uZW50Il0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7QUFDRTs7Ozs7Ozs7Ozs7O0lBRXFCQSxNOzs7Ozs7Ozs7Ozs7OztzTEFDbkJDLEssR0FBUTtBQUNOQyxZQUFNO0FBQ0pDLGNBQU1DLEtBREY7QUFFSkMsaUJBQVM7QUFGTDtBQURBLEssUUFNUkMsSSxHQUFPO0FBQ0xDLHFCQUFlLElBRFYsRUFDaUI7QUFDdEJDLGdCQUFVLEtBRkwsRUFFaUI7QUFDdEJDLGdCQUFVLElBSEwsRUFHaUI7QUFDekJDLGdCQUFVLElBSkYsRUFJYztBQUN0QkMsZUFBUyxDQUxELEVBS2M7QUFDdEJDLGtCQUFZLElBTkosQ0FNYztBQU5kLEssUUFRUEMsTyxHQUFVO0FBQ1JDLGtCQURRLHdCQUNLQyxDQURMLEVBQ1E7QUFDZCxZQUFJQyxPQUFPLElBQVg7QUFDQUEsYUFBS0MsaUJBQUwsR0FBeUJGLEVBQUVHLE1BQUYsQ0FBU1AsT0FBbEM7QUFDQUssYUFBS0csTUFBTDtBQUNEO0FBTE8sSzs7Ozs7MkJBT0ZKLEMsRUFBRyxDQUNWOzs7O0VBdkJpQyxlQUFLSyxTOztrQkFBcEJwQixNIiwiZmlsZSI6InN3aXBlci5qcyIsInNvdXJjZXNDb250ZW50IjpbIlxyXG4gIGltcG9ydCB3ZXB5IGZyb20gJ3dlcHknXHJcblxyXG4gIGV4cG9ydCBkZWZhdWx0IGNsYXNzIFN3aXBlciBleHRlbmRzIHdlcHkuY29tcG9uZW50IHtcclxuICAgIHByb3BzID0ge1xyXG4gICAgICBpbWdzOiB7XHJcbiAgICAgICAgdHlwZTogQXJyYXksXHJcbiAgICAgICAgZGVmYXVsdDogW11cclxuICAgICAgfVxyXG4gICAgfVxyXG4gICAgZGF0YSA9IHtcclxuICAgICAgaW5kaWNhdG9yRG90czogdHJ1ZSwgIC8vIOaYr+WQpuaYvuekuumdouadv+aMh+ekuueCuVxyXG4gICAgICBhdXRvcGxheTogZmFsc2UsICAgICAgLy8g5piv5ZCm6Ieq5Yqo5pKt5pS+XHJcbiAgICAgIGludGVydmFsOiA1MDAwLCAgICAgICAvLyDoh6rliqjliIfmjaLml7bpl7Tpl7TpmpRcclxuXHRcdFx0ZHVyYXRpb246IDEwMDAsICAgICAgIC8vIOa7keWKqOWKqOeUu+aXtumVv1xyXG5cdFx0XHRjdXJyZW50OiAwLCAgICAgICAgICAgLy8g5b2T5YmN5omA5Zyo5ruR5Z2X55qEIGluZGV4XHJcblx0XHRcdGlzY2lyY3VsYXI6IHRydWUgICAgICAvLyDmmK/lkKbph4fnlKjooZTmjqXmu5HliqhcclxuICAgIH1cclxuICAgIG1ldGhvZHMgPSB7XHJcbiAgICAgIGhhbmRsZUNoYW5nZShlKSB7XHJcbiAgICAgICAgbGV0IHNlbGYgPSB0aGlzXHJcbiAgICAgICAgc2VsZi5zd2lwZXJDdXJyZW50UGFnZSA9IGUuZGV0YWlsLmN1cnJlbnRcclxuICAgICAgICBzZWxmLiRhcHBseSgpXHJcbiAgICAgIH1cclxuICAgIH1cclxuICAgIG9uTG9hZCAoZSkge1xyXG4gICAgfVxyXG4gIH1cclxuIl19

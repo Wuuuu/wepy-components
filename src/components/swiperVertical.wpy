@@ -1,0 +1,72 @@
+<style lang="less">
+.com-verticalSwiper__container {
+	.kk-verticalSwiper {
+    height: 80rpx;
+    .kk-verticalSwiper__box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .kk-verticalSwiper__icon {
+        flex: 0 0 120rpx;
+        image {
+          display: block;
+          width: 48rpx;
+          height: 48rpx;
+        }
+      }
+      .kk-verticalSwiper__text {
+        flex: 1;
+      }
+    }
+	}
+}
+</style>
+<template>
+  <view class="com-verticalSwiper__container">
+    <swiper
+			class="kk-verticalSwiper" 
+			indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}" 
+			interval="{{interval}}" 
+			duration="{{duration}}"
+			current="{{current}}"
+			circular="{{iscircular}}"
+      vertical="{{vertical}}"
+		>
+			<repeat for="{{imgs}}" key="key" index="index" item="item">
+        <swiper-item>
+          <view class="kk-verticalSwiper__box">
+            <view class="kk-verticalSwiper__icon">
+              <image src="{{item.icon}}"/>
+            </view>
+            <view class="kk-verticalSwiper__text">{{item.text}}</view>
+          </view>
+        </swiper-item>
+      </repeat>
+    </swiper>
+  </view>
+</template>
+<script>
+  import wepy from 'wepy'
+
+  export default class SwiperVertical extends wepy.component {
+    props = {
+      imgs: {
+        type: Array,
+        default: []
+      }
+    }
+    data = {
+      indicatorDots: false,  // 是否显示面板指示点
+      autoplay: false,      // 是否自动播放
+      interval: 5000,       // 自动切换时间间隔
+			duration: 1000,       // 滑动动画时长
+			current: 0,           // 当前所在滑块的 index
+			iscircular: true,     // 是否采用衔接滑动
+      vertical: true        // 滑动方向为纵向
+    }
+    methods = {}
+    onLoad (e) {
+    }
+  }
+</script>

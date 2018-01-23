@@ -5,7 +5,12 @@
   <view class="page-swiper__container">
     <comContainer title="swiper" desc="轮播图">
       <comCard title="swiper" desc="普通的轮播图">
-        <swiper />
+        <swiper :imgs.sync="imgs" ></swiper>
+      </comCard>
+    </comContainer>
+    <comContainer title="swiperVertical" desc="轮播图">
+      <comCard title="swiperVertical" desc="纵向通知滚动展示类轮播">
+        <swiperVertical :imgs.sync="verticalImgs" ></swiperVertical>
       </comCard>
     </comContainer>
   </view>
@@ -16,6 +21,7 @@
   import comCard from '../../../components/componentCard'
   import comContainer from '../../../components/componentContainer'
   import swiper from '../../../components/swiper'
+  import swiperVertical from '../../../components/swiperVertical'
 
   export default class Swiper extends wepy.page {
     config = {
@@ -24,10 +30,31 @@
     components = {
       comContainer,
       comCard,
-      swiper
+      swiper,
+      swiperVertical
     }
 
     data = {
+      // 动态获取图片传入swiper
+      imgs: [
+        'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+        'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
+        'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
+      ],
+      verticalImgs: [
+        {
+          icon: '../../../assets/icon/icon-partly-cloudy.png',
+          text: '今天天气：少云,事宜在家看电视打游戏'
+        },
+        {
+          icon: '../../../assets/icon/icon-sunshine.png',
+          text: '今天天气：晴,适合出门游玩'
+        },
+        {
+          icon: '../../../assets/icon/icon-heavy-shower.png',
+          text: '今天天气：特大阵雨,出门记得带伞'
+        }
+      ]
     }
 
     methods = {
