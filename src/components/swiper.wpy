@@ -18,7 +18,8 @@
 			interval="{{interval}}" 
 			duration="{{duration}}"
 			current="{{current}}"
-			@change="changeSwiper"
+			circular="{{iscircular}}"
+			@change="handleChange"
 		>
 			<repeat for="{{imgUrls}}" key="key" index="index" item="item">
         <swiper-item>
@@ -33,13 +34,6 @@
 
   export default class Swiper extends wepy.component {
     props = {
-      num: {
-        type: [Number, String],
-        coerce: function (v) {
-          return +v
-        },
-        default: 50
-      }
     }
     data = {
       imgUrls: [
@@ -51,10 +45,11 @@
       autoplay: false,
       interval: 5000,
 			duration: 1000,
-			current: 0
+			current: 0,
+			iscircular: true
     }
     methods = {
-      changeSwiper(e) {
+      handleChange(e) {
         let self = this
         self.swiperCurrentPage = e.detail.current
         self.$apply()

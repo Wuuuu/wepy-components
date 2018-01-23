@@ -17,7 +17,7 @@
           
         
   <view class="com-swiper__container">
-    <swiper class="kk-swiper" indicator-dots="{{$swiper$indicatorDots}}" autoplay="{{$swiper$autoplay}}" interval="{{$swiper$interval}}" duration="{{$swiper$duration}}" current="{{$swiper$current}}" bindchange="$swiper$changeSwiper">
+    <swiper class="kk-swiper" indicator-dots="{{$swiper$indicatorDots}}" autoplay="{{$swiper$autoplay}}" interval="{{$swiper$interval}}" duration="{{$swiper$duration}}" current="{{$swiper$current}}" circular="{{$swiper$iscircular}}" bindchange="$swiper$handleChange">
 			<block wx:for="{{$swiper$imgUrls}}" wx:for-index="$swiper$index" wx:for-item="$swiper$item" wx:key="$swiper$key">
         <swiper-item>
           <image src="{{$swiper$item}}" class="kk-swiper__image" mode="widthFix"/>
