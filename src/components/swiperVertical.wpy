@@ -4,18 +4,21 @@
     height: 80rpx;
     .kk-verticalSwiper__box {
       display: flex;
-      justify-content: center;
+      // justify-content: center;
       align-items: center;
       .kk-verticalSwiper__icon {
         flex: 0 0 120rpx;
         image {
           display: block;
+          margin: 0 auto;
           width: 48rpx;
           height: 48rpx;
         }
       }
       .kk-verticalSwiper__text {
         flex: 1;
+        line-height: 80rpx;
+        font-size: 28rpx;
       }
     }
 	}
@@ -58,8 +61,8 @@
     }
     data = {
       indicatorDots: false,  // 是否显示面板指示点
-      autoplay: false,      // 是否自动播放
-      interval: 5000,       // 自动切换时间间隔
+      autoplay: true,      // 是否自动播放
+      interval: 2000,       // 自动切换时间间隔
 			duration: 1000,       // 滑动动画时长
 			current: 0,           // 当前所在滑块的 index
 			iscircular: true,     // 是否采用衔接滑动
