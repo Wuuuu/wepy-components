@@ -51,7 +51,6 @@
 </template>
 <script>
   import wepy from 'wepy'
-  // import abc from 'abc'
 
   export default class ComponentContainer extends wepy.component {
     props = {
