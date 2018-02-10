@@ -1,4 +1,43 @@
 
   <view class="page-avatar__container">
-    <view>123</view>
+    
+  <view class="com-container__container">
+    <view class="example example--wrap">
+      <view  wx:if="{{$comContainer$title || $comContainer$desc}}" class="example__head">
+          <view wx:if="{{$comContainer$title}}" class="example__head--title">{{$comContainer$title}}</view>
+          <view wx:if="{{$comContainer$title && $comContainer$desc}}" class="example__head--line"/>
+          <view wx:if="{{$comContainer$desc}}" class="example__head--desc">{{$comContainer$desc}}</view>
+      </view>
+      
+      
+  <view class="com-card__container">
+    <view class="example--box">
+      <view class="example--demo demo">
+        <view class="demo-inner">
+          
+        
+  <view class="com-avatar__container">
+    <view class="kk-avatar_box">
+      <image src="../../../assets/icon/icon-basketball.png"/>
+    </view>
+  </view>
+
+      
+        </view>
+      </view>
+      <view class="example--meta meta">
+        <view class="meta-title">{{$comCard$title}}</view>
+        <view class="meta-desc">{{$comCard$desc}}</view>
+      </view>
+      <!-- <view class="example--source">
+          <view class="view-btn {{viewSourceClass}}" bindtap="bindViewSourceEvent">{{ isExpandSource ? 'Hide' : 'Show' }} Code</view>
+          <example-md wx:if="{{isExpandSource}}" content="{{source}}" type="demo" _pid="{{_pid}}"></example-md>
+      </view> -->
+    </view>
+  </view>
+
+    
+    </view>
+  </view>
+
   </view>

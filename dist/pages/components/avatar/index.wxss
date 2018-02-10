@@ -1,2 +1,3 @@
+@import "./../../../components/avatar.wxss";
 @import "./../../../components/componentCard.wxss";
 @import "./../../../components/componentContainer.wxss";

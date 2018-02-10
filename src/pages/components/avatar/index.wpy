@@ -3,12 +3,18 @@
 </style>
 <template>
   <view class="page-avatar__container">
-    <view>123</view>
+    <comContainer title="avatar" desc="头像">
+      <comCard title="avatar" desc="普通头像">
+        <avatar />
+      </comCard>
+    </comContainer>
   </view>
 </template>
 
 <script>
   import wepy from 'wepy'
+  
+  import avatar from '../../../components/avatar'
   import comCard from '../../../components/componentCard'
   import comContainer from '../../../components/componentContainer'
 
@@ -19,6 +25,7 @@
     components = {
       comContainer,
       comCard,
+      avatar
     }
 
     data = {
