@@ -19,8 +19,7 @@
 			duration="{{duration}}"
 			current="{{current}}"
 			circular="{{iscircular}}"
-			@change="handleChange"
-		>
+			@change="handleChange">
 			<repeat for="{{imgs}}" key="key" index="index" item="item">
         <swiper-item>
           <image src="{{item}}" class="kk-swiper__image" mode="widthFix"/>
