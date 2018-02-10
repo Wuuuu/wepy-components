@@ -15,8 +15,8 @@ module.exports = {
       "icon": "",
       "code": "https://s10.mogucdn.com/mlcdn/c45406/171107_31b09klh28f5i7lkcg2h4d7jaikhk_480x480.jpg"
     }, {
-      "id": "com-order",
-      "name": "我的订单",
+      "id": "avatar",
+      "name": "头像",
       "icon": "",
       "code": "https://s10.mogucdn.com/mlcdn/c45406/171107_31b09klh28f5i7lkcg2h4d7jaikhk_480x480.jpg"
     }]
