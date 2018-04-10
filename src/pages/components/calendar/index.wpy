@@ -5,7 +5,7 @@
   <view class="page-calendar__container">
     <comContainer title="calendar" desc="日历">
       <comCard title="calendar" desc="日历📅">
-        <calendar />
+        <calendar :monthOfDays="monthOfDays" />
       </comCard>
     </comContainer>
   </view>
@@ -28,7 +28,9 @@ export default class Calendar extends wepy.page {
     calendar
   };
 
-  data = {};
+  data = {
+    monthOfDays: [1,2,3,4,5]
+  };
 
   methods = {};
 

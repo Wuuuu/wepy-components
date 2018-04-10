@@ -32,9 +32,12 @@
           </block>
         </view>
         <view class="calendar-days">
-          <view  wx:if="{{$calendar$true}}" class="days-grid" wx:for="{{$calendar$empytGrids}}" wx:key="{{index}}" data-idx="{{index}}"/>
-          <block wx:for="{{$calendar$days}}" wx:for-index="$calendar$index" wx:for-item="$calendar$item" wx:key="$calendar$key">
-            <view class="days-grid  " bindtap="$calendar$handleDayItem" data-wpyhandledayitem-a="{{item.dayDate}}">
+          <block  wx:if="{{$calendar$hasEmptyGrid}}">
+            <view class="days-grid" wx:for="{{$calendar$empytGrids}}" wx:key="{{index}}" data-idx="{{index}}">
+            </view>    
+          </block>
+          <block  wx:for="{{$calendar$days}}" key="key" index="index" item="item">
+            <view class="days-grid" bindtap="$calendar$handleDayItem" data-wpyhandledayitem-a="{{item.dayDate}}">
               <view class="day {{item.choosed ? 'day-active' : ''}}">{{item.day}}</view>
             </view>
           </block>
