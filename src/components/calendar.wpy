@@ -1,0 +1,21 @@
+<style lang="less">
+  .com-calendar__container {
+  }
+</style>
+<template>
+  <view class="com-calendar__container">
+    123
+  </view>
+</template>
+<script>
+  import wepy from 'wepy'
+
+  export default class Calendar extends wepy.component {
+    props = {}
+    data = {}
+    methods = {}
+    onLoad (e) {
+      console.log('calendar')
+    }
+  }
+</script>
