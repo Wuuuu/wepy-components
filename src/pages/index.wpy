@@ -1,5 +1,5 @@
 <style lang="less">
-@import '../styles/layout/layout.wxss';
+@import "../styles/layout/layout.wxss";
 .index {
   height: 100%;
   background: #f9f9f9;
@@ -39,38 +39,37 @@
 </template>
 
 <script>
-  import wepy from 'wepy'
-  import config from './config'
-  let { menus } = config
+import wepy from "wepy";
+import config from "./config";
+const { menus } = config;
 
-  export default class Index extends wepy.page {
-    config = {
-      navigationBarTitleText: '组件'
-    }
-    components = {
-    }
-    data = {
-      menus
-    }
-    methods = {
-      kindToggle: function (e) {
-        const { id } = e.currentTarget
-        const { menus } = this.data
-        for (let index = 0; index < menus.length; index++) {
-          let menu = menus[index]
-          if (menu.id == id) {
-            menu.open = !menu.open
-          } else {
-            menu.open = false
-          }
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: "组件"
+  };
+  components = {};
+  data = {
+    menus
+  };
+  methods = {
+    kindToggle: function(e) {
+      const { id } = e.currentTarget;
+      const { menus } = this.data;
+      for (let index = 0; index < menus.length; index++) {
+        let menu = menus[index];
+        if (menu.id == id) {
+          menu.open = !menu.open;
+        } else {
+          menu.open = false;
         }
-        this.setData({
-          menus
-        })
       }
+      this.setData({
+        menus
+      });
     }
-    onLoad() {
-      let self = this
-    }
+  };
+  onLoad() {
+    let self = this;
   }
+}
 </script>

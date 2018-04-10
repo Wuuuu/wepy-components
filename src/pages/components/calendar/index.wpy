@@ -2,9 +2,9 @@
 
 </style>
 <template>
-  <view class="page-avatar__container">
-    <comContainer title="avatar" desc="头像">
-      <comCard title="avatar" desc="普通头像">
+  <view class="page-calendar__container">
+    <comContainer title="calendar" desc="日历">
+      <comCard title="calendar" desc="日历📅">
         <calendar />
       </comCard>
     </comContainer>
@@ -12,29 +12,26 @@
 </template>
 
 <script>
-  import wepy from 'wepy'
-  
-  import calendar from '../../../components/calendar'
-  import comCard from '../../../components/componentCard'
-  import comContainer from '../../../components/componentContainer'
+import wepy from "wepy";
 
-  export default class Calendar extends wepy.page {
-    config = {
-      navigationBarTitleText: 'Layout'
-    }
-    components = {
-      comContainer,
-      comCard,
-      calendar
-    }
+import calendar from "../../../components/calendar";
+import comCard from "../../../components/componentCard";
+import comContainer from "../../../components/componentContainer";
 
-    data = {
-    }
+export default class Calendar extends wepy.page {
+  config = {
+    navigationBarTitleText: "Layout"
+  };
+  components = {
+    comContainer,
+    comCard,
+    calendar
+  };
 
-    methods = {
-    }
+  data = {};
 
-    onLoad() {
-    }
-  }
+  methods = {};
+
+  onLoad() {}
+}
 </script>

@@ -10,8 +10,8 @@ module.exports = {
       "icon": "",
       "code": "https://s10.mogucdn.com/mlcdn/c45406/171107_11bia820k8j1djja0kl0ce8ejce5g_480x480.jpg"
     }, {
-      "id": "font",
-      "name": "文字",
+      "id": "calendar",
+      "name": "日历",
       "icon": "",
       "code": "https://s10.mogucdn.com/mlcdn/c45406/171107_31b09klh28f5i7lkcg2h4d7jaikhk_480x480.jpg"
     }, {

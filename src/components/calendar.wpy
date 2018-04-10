@@ -1,21 +1,322 @@
 <style lang="less">
-  .com-calendar__container {
+.com-calendar__container {
+  .schedule-container {
+    background: #fff;
+    .calendar-container {
+      .calendar-header {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        height: 100rpx;
+        .prev-month,
+        .next-month {
+          flex: 0 0 180rpx;
+        }
+        .cur-month {
+          flex: 1;
+        }
+      }
+      .calendar-week {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid #efefef;
+        .weeks-grid {
+          text-align: center;
+          flex: 107.1428571429rpx;
+          color: #dd5044;
+        }
+      }
+      .calendar-days {
+        display: flex;
+        flex-wrap: wrap;
+        .days-grid {
+          // text-align: center;
+          height: 100rpx;
+          width: 107.1428571429rpx;
+          border-bottom: 1px solid #eee;
+          .day {
+            margin: 20rpx auto;
+            width: 60rpx;
+            height: 60rpx;
+            line-height: 60rpx;
+            text-align: center;
+            font-size: 28rpx;
+          }
+          .day-active {
+            border: 1px solid #dd5044;
+            border-radius: 50%;
+          }
+        }
+      }
+      .calendar-close {
+        margin-top: 60rpx;
+        image {
+          display: block;
+          margin: 0 auto;
+          width: 60rpx;
+          height: 60rpx;
+        }
+      }
+    }
+    .header {
+      display: flex;
+      height: 100rpx;
+      border-bottom: 1px solid #efefef;
+      .last-week {
+        text-align: right;
+      }
+      .last-week,
+      .next-week {
+        flex: 0 0 180rpx;
+        line-height: 110rpx;
+        wxc-icon {
+          color: #dd5044;
+        }
+      }
+      .date {
+        flex: 1;
+        line-height: 110rpx;
+        text-align: center;
+      }
+    }
+    .content {
+      .day {
+        display: flex;
+        margin-bottom: 20rpx;
+        border-bottom: 1px solid #efefef;
+        .item-box {
+          flex: 0 0 14.2857%;
+          text-align: center;
+          .item-box-border {
+            border-right: 1px solid #eee;
+            .item-img {
+              width: 100%;
+              height: 40rpx;
+              image {
+                position: relative;
+                top: 2rpx;
+                left: 26rpx;
+                width: 40rpx;
+                height: 40rpx;
+              }
+            }
+            .week-day {
+              font-size: 24rpx;
+              color: rgba(0, 0, 0, 0.8);
+            }
+            .week-item {
+              padding-bottom: 12rpx;
+              font-size: 24rpx;
+            }
+          }
+        }
+        .item-box:active {
+          background: rgb(216, 63, 63);
+        }
+        .item-box-active {
+          color: #dd5044;
+          background: #f4cfcf;
+        }
+      }
+      .my-lesson {
+        display: flex;
+        padding: 30rpx 18rpx;
+        margin-top: 8rpx;
+        background: #eee;
+        .my-lesson-time {
+          flex: 0 0 160rpx;
+          padding: 8rpx 20rpx;
+          text-align: center;
+          font-size: 28rpx;
+        }
+        .my-lesson-brief {
+          flex: 1;
+          .teacher,
+          .place {
+            font-size: 28rpx;
+            color: #888;
+          }
+        }
+        .my-lesson-icon {
+          flex: 0 0 70rpx;
+          image {
+            display: block;
+            padding-top: 55rpx;
+            margin: 0 auto;
+            width: 50rpx;
+            height: 50rpx;
+          }
+        }
+      }
+    }
+    .footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      max-width: 100%;
+      height: 100rpx;
+      background: #fff;
+      .item {
+        margin-top: 20rpx;
+        width: 140rpx;
+      }
+      .status-icon {
+        margin: 0 auto;
+        width: 36rpx;
+        height: 36rpx;
+        border-radius: 50%;
+      }
+      .text {
+        text-align: center;
+        font-size: 28rpx;
+      }
+    }
   }
+}
 </style>
 <template>
   <view class="com-calendar__container">
-    123
+    <view class="schedule-container">
+    <!-- 日历表📅 -->
+    <wxc-mask status="{{maskStatus}}" background-color="#fff" opacity="1" class="mask-animation">
+      <view class="calendar-container">
+        <view class="calendar-header">
+          <view class="prev-month" @tap="handleCalendar" data-action="prev">上一月</view>
+          <view class="cur-month">{{currentDate}}</view>
+          <view class="next-month" @tap="handleCalendar" data-action="next">下一月</view>  
+        </view>
+        <view class="calendar-week">
+          <repeat for="{{weeks_ch}}" item="week">
+            <view class="weeks-grid">{{week}}</view>
+          </repeat>
+        </view>
+        <view class="calendar-days">
+          <view wx:if="{{true}}" class="days-grid" wx:for="{{empytGrids}}" wx:key="{{index}}" data-idx="{{index}}"></view>
+          <repeat for="{{days}}" key="key" index="index" item="item">
+            <view class="days-grid  " @tap="handleDayItem({{item.dayDate}})">
+              <view class="day {{item.choosed ? 'day-active' : ''}}">{{item.day}}</view>
+            </view>
+          </repeat>
+        </view>
+      </view>
+    </wxc-mask>
+    </view>
   </view>
 </template>
 <script>
-  import wepy from 'wepy'
+import wepy from "wepy";
+import moment from "moment";
 
-  export default class Calendar extends wepy.component {
-    props = {}
-    data = {}
-    methods = {}
-    onLoad (e) {
-      console.log('calendar')
+export default class Calendar extends wepy.component {
+  props = {};
+  data = {
+    week: [
+      { week: "周日" },
+      { week: "周一" },
+      { week: "周二" },
+      { week: "周三" },
+      { week: "周四" },
+      { week: "周五" },
+      { week: "周六" }
+    ],
+    currentDate: moment().format("YYYY-MM-DD"), // 获取当前日期 YYYY-MM-DD
+    thisMonthDays: [], // 获取当前月一共多少天
+    currentMonth: parseInt(moment().format("MM")), // 当前月份
+    currentYear: moment().year(), // 当前年份
+    currentDay: moment().dayOfYear(), // 当前天
+    days: [], // 每个月的每天数组
+    weeks_ch: [],
+    empytGrids: [],
+    hasEmptyGrid: false,
+    maskStatus: "hide",
+    todayEntity: [],
+    currentDayData: [],
+    unionuser: null
+  };
+  methods = {};
+  onLoad() {
+    let self = this;
+
+    const weeks_ch = ["日", "一", "二", "三", "四", "五", "六"];
+    self.calEmptyGrid(self.currentYear, self.currentMonth);
+    self.calDays(self.currentYear, self.currentMonth);
+    let week = self.week;
+    const thisMonthDays = new Date(
+      moment().format("YYYY"),
+      moment().format("MM"),
+      0
+    ).getDate();
+    const theWeekFirstDay = parseInt(
+      moment()
+        .startOf("week")
+        .format("DD")
+    ); // 获取本周的第一天
+    for (let i = 0; i < 7; i++) {
+      week[i].day = moment()
+        .dayOfYear(theWeekFirstDay + i)
+        .format("DD"); // 初始化week数组
+      week[i].date = moment()
+        .dayOfYear(theWeekFirstDay + i)
+        .format("YYYY-MM-DD"); // 初始化week数组
     }
+    self.weeks_ch = weeks_ch;
+    self.week = week;
+    self.$apply();
   }
+  onShow() {
+    let self = this;
+    const { currentDate } = self.data;
+    const theWeekFirstDay = moment(currentDate)
+      .startOf("week")
+      .format("YYYY-MM-DD"); // 获取该日期所在周的第一天
+    const theWeekLastDay = moment(currentDate)
+      .endOf("week")
+      .format("YYYY-MM-DD"); // 获取该日期所在周的最后一周
+    self.querySchedule(theWeekFirstDay, theWeekLastDay);
+  }
+  // 计算每个月的轮空数
+  calEmptyGrid(year, month) {
+    let self = this;
+    let firstDayOfWeek = new Date(Date.UTC(year, month - 1, 1)).getDay();
+    let empytGrids = [];
+    if (firstDayOfWeek > 0) {
+      for (let i = 0; i < firstDayOfWeek; i++) {
+        empytGrids.push(i);
+      }
+      self.empytGrids = empytGrids;
+      self.hasEmptyGrid = true;
+      self.$apply();
+    } else {
+      self.empytGrids = [];
+      self.hasEmptyGrid = false;
+      self.$apply();
+    }
+    // console.log(`每个月空格数:${self.empytGrids}`)
+  }
+  // 获取当月的天数
+  calDays(year, month) {
+    let self = this;
+    const { currentDate } = self.data;
+    let days = [];
+    const thisMonthDays = new Date(year, month, 0).getDate(); // 获取当前月的天数(eg: 1月 31天)
+    for (let i = 1; i <= thisMonthDays; i++) {
+      let choosed =
+        currentDate ==
+        moment(`${year}-${month}-${i}`, "YYYY-MM-D").format("YYYY-MM-DD")
+          ? true
+          : false;
+      days.push({
+        dayDate: moment(`${year}-${month}-${i}`, "YYYY-MM-D").format(
+          "YYYY-MM-DD"
+        ), // 每天的完整日期
+        day: i, // 每天的 日
+        choosed // 是否是当天，如果是则为true
+      });
+    }
+    self.days = days;
+    self.$apply();
+  }
+}
 </script>

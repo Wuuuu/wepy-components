@@ -47,6 +47,7 @@ export default class extends wepy.app {
       'pages/about',
       'pages/components/swiper/index',
       'pages/components/avatar/index',
+      'pages/components/calendar/index'
     ],
     window: {
       backgroundTextStyle: 'light',
