@@ -4,8 +4,8 @@
       image {
         display: block;
         margin: 0 auto;
-        width: 80rpx;
-        height: 80rpx;
+        // width: 80rpx;
+        // height: 80rpx;
         border: 1px solid #efefef;
         border-radius: 50%;
       }
@@ -15,7 +15,8 @@
 <template>
   <view class="com-avatar__container">
     <view class="kk-avatar_box">
-      <image src="../assets/icon/icon-basketball.png" />
+      <image src="../assets/icon/icon-basketball.png" style="width: {{size}}rpx; height: {{size}}rpx"/>
+      <view>{{size}}</view>  
     </view>
   </view>
 </template>
@@ -23,7 +24,12 @@
   import wepy from 'wepy'
 
   export default class Avatar extends wepy.component {
-    props = {}
+    props = {
+      size: {
+        type: Number,
+        default: 80
+      }
+    }
     data = {}
     methods = {}
     onLoad (e) {

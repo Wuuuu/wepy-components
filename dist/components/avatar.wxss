@@ -1,1 +1,1 @@
-.com-avatar__container .kk-avatar_box image{display:block;margin:0 auto;width:80rpx;height:80rpx;border:1px solid #efefef;border-radius:50%}
+.com-avatar__container .kk-avatar_box image{display:block;margin:0 auto;border:1px solid #efefef;border-radius:50%}

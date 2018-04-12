@@ -33,7 +33,12 @@ var Avatar = function (_wepy$component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Avatar.__proto__ || Object.getPrototypeOf(Avatar)).call.apply(_ref, [this].concat(args))), _this), _this.props = {}, _this.data = {}, _this.methods = {}, _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Avatar.__proto__ || Object.getPrototypeOf(Avatar)).call.apply(_ref, [this].concat(args))), _this), _this.props = {
+      size: {
+        type: Number,
+        default: 80
+      }
+    }, _this.data = {}, _this.methods = {}, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Avatar, [{
@@ -47,4 +52,4 @@ var Avatar = function (_wepy$component) {
 }(_wepy2.default.component);
 
 exports.default = Avatar;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImF2YXRhci5qcyJdLCJuYW1lcyI6WyJBdmF0YXIiLCJwcm9wcyIsImRhdGEiLCJtZXRob2RzIiwiZSIsImNvbnNvbGUiLCJsb2ciLCJjb21wb25lbnQiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7OztBQUNFOzs7Ozs7Ozs7Ozs7SUFFcUJBLE07Ozs7Ozs7Ozs7Ozs7O3NMQUNuQkMsSyxHQUFRLEUsUUFDUkMsSSxHQUFPLEUsUUFDUEMsTyxHQUFVLEU7Ozs7OzJCQUNGQyxDLEVBQUc7QUFDVEMsY0FBUUMsR0FBUixDQUFZLFFBQVo7QUFDRDs7OztFQU5pQyxlQUFLQyxTOztrQkFBcEJQLE0iLCJmaWxlIjoiYXZhdGFyLmpzIiwic291cmNlc0NvbnRlbnQiOlsiXHJcbiAgaW1wb3J0IHdlcHkgZnJvbSAnd2VweSdcclxuXHJcbiAgZXhwb3J0IGRlZmF1bHQgY2xhc3MgQXZhdGFyIGV4dGVuZHMgd2VweS5jb21wb25lbnQge1xyXG4gICAgcHJvcHMgPSB7fVxyXG4gICAgZGF0YSA9IHt9XHJcbiAgICBtZXRob2RzID0ge31cclxuICAgIG9uTG9hZCAoZSkge1xyXG4gICAgICBjb25zb2xlLmxvZygnYXZhdGFyJylcclxuICAgIH1cclxuICB9XHJcbiJdfQ==
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImF2YXRhci5qcyJdLCJuYW1lcyI6WyJBdmF0YXIiLCJwcm9wcyIsInNpemUiLCJ0eXBlIiwiTnVtYmVyIiwiZGVmYXVsdCIsImRhdGEiLCJtZXRob2RzIiwiZSIsImNvbnNvbGUiLCJsb2ciLCJjb21wb25lbnQiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7OztBQUNFOzs7Ozs7Ozs7Ozs7SUFFcUJBLE07Ozs7Ozs7Ozs7Ozs7O3NMQUNuQkMsSyxHQUFRO0FBQ05DLFlBQU07QUFDSkMsY0FBTUMsTUFERjtBQUVKQyxpQkFBUztBQUZMO0FBREEsSyxRQU1SQyxJLEdBQU8sRSxRQUNQQyxPLEdBQVUsRTs7Ozs7MkJBQ0ZDLEMsRUFBRztBQUNUQyxjQUFRQyxHQUFSLENBQVksUUFBWjtBQUNEOzs7O0VBWGlDLGVBQUtDLFM7O2tCQUFwQlgsTSIsImZpbGUiOiJhdmF0YXIuanMiLCJzb3VyY2VzQ29udGVudCI6WyJcclxuICBpbXBvcnQgd2VweSBmcm9tICd3ZXB5J1xyXG5cclxuICBleHBvcnQgZGVmYXVsdCBjbGFzcyBBdmF0YXIgZXh0ZW5kcyB3ZXB5LmNvbXBvbmVudCB7XHJcbiAgICBwcm9wcyA9IHtcclxuICAgICAgc2l6ZToge1xyXG4gICAgICAgIHR5cGU6IE51bWJlcixcclxuICAgICAgICBkZWZhdWx0OiA4MFxyXG4gICAgICB9XHJcbiAgICB9XHJcbiAgICBkYXRhID0ge31cclxuICAgIG1ldGhvZHMgPSB7fVxyXG4gICAgb25Mb2FkIChlKSB7XHJcbiAgICAgIGNvbnNvbGUubG9nKCdhdmF0YXInKVxyXG4gICAgfVxyXG4gIH1cclxuIl19

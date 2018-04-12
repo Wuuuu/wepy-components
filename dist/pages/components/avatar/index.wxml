@@ -18,7 +18,8 @@
         
   <view class="com-avatar__container">
     <view class="kk-avatar_box">
-      <image src="../../../assets/icon/icon-basketball.png"/>
+      <image src="../../../assets/icon/icon-basketball.png" style="width: {{$avatar$size}}rpx; height: {{$avatar$size}}rpx"/>
+      <view>{{$avatar$size}}</view>  
     </view>
   </view>
 
