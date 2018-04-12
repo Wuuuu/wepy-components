@@ -1,39 +1,41 @@
 <style lang="less">
-  .com-avatar__container {
-    .kk-avatar_box {
-      image {
-        display: block;
-        margin: 0 auto;
-        // width: 80rpx;
-        // height: 80rpx;
-        border: 1px solid #efefef;
-        border-radius: 50%;
-      }
+.com-avatar__container {
+  .kk-avatar_box {
+    image {
+      display: block;
+      margin: 0 auto;
+      border: 1px solid #000;
+      border-radius: 50%;
     }
   }
+}
 </style>
 <template>
   <view class="com-avatar__container">
     <view class="kk-avatar_box">
-      <image src="../assets/icon/icon-basketball.png" style="width: {{size}}rpx; height: {{size}}rpx"/>
-      <view>{{size}}</view>  
+      <image src="../assets/icon/icon-basketball.png" 
+        style="width: {{size}}rpx;height: {{size}}rpx; border-radius: {{mold == 'circle' ? 50 : 0}}%"/>
     </view>
   </view>
 </template>
 <script>
-  import wepy from 'wepy'
+import wepy from "wepy";
 
-  export default class Avatar extends wepy.component {
-    props = {
-      size: {
-        type: Number,
-        default: 80
-      }
+export default class Avatar extends wepy.component {
+  props = {
+    size: {
+      type: Number,
+      default: 80
+    },
+    mold: {
+      type: String,
+      default: "circle"
     }
-    data = {}
-    methods = {}
-    onLoad (e) {
-      console.log('avatar')
-    }
+  };
+  data = {};
+  methods = {};
+  onLoad(e) {
+    console.log("avatar");
   }
+}
 </script>

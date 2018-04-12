@@ -5,7 +5,7 @@
   <view class="page-avatar__container">
     <comContainer title="avatar" desc="头像">
       <comCard title="avatar" desc="普通头像">
-        <avatar :size="size"/>
+        <avatar :size="size" :mold="mold"/>
       </comCard>
     </comContainer>
   </view>
@@ -29,7 +29,8 @@
     }
 
     data = {
-      size: 120
+      size: 120,
+      mold: 'circle'
     }
 
     methods = {
