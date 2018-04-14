@@ -164,6 +164,9 @@ export default class Calendar extends wepy.component {
         console.log(`当前日期：${currentDate}`);
       }
       // console.log(action)
+    },
+    handleDayItem(params) {
+      console.log('onClick事件',params)
     }
   };
   onLoad() {
